@@ -12,6 +12,12 @@ const orderSchema = new Schema({
       type: Schema.Types.ObjectId,
       ref: 'Product'
     }
+  ],
+  albums: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'Album'
+    }
   ]
 });
 
