@@ -22,6 +22,24 @@ const typeDefs = gql`
     products: [Product]
   }
 
+  type Genre {
+    _id: ID
+    name: String
+  }
+
+  type Album {
+    _id: ID
+    title: String
+    description: String
+    label: String
+    Artist: String
+    imageFront: String
+    imageBack: String
+    quantity: Int
+    price: Float
+    genre: Genre
+  }
+
   type User {
     _id: ID
     firstName: String
@@ -31,6 +49,10 @@ const typeDefs = gql`
   }
 
   type Checkout {
+    session: ID
+  }
+
+  type SaveOrder {
     session: ID
   }
 
@@ -46,6 +68,9 @@ const typeDefs = gql`
     user: User
     order(_id: ID!): Order
     checkout(products: [ID]!): Checkout
+    genres: [Genre]
+    albums(genre: ID, title: String): [Album]
+    album(_id: ID!): Album
   }
 
   type Mutation {
@@ -54,6 +79,8 @@ const typeDefs = gql`
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
+    addAlbumOrder(albums: [ID]!): Order
+    updateAlbum(_id: ID!, quantity: Int!): Album
   }
 `;
 
