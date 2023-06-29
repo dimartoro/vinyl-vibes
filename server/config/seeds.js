@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category } = require('../models');
+const { User, Product, Category, Album, Genre } = require('../models');
 
 db.once('open', async () => {
   await Category.deleteMany();
@@ -10,6 +10,14 @@ db.once('open', async () => {
     { name: 'Electronics' },
     { name: 'Books' },
     { name: 'Toys' }
+  ]);
+
+  const genres = await Genre.insertMany([
+    { name: 'Rock' },
+    { name: 'Pop' },
+    { name: 'Salsa' },
+    { name: 'Country' },
+    { name: 'Jazz' }
   ]);
 
   console.log('categories seeded');
@@ -127,6 +135,26 @@ db.once('open', async () => {
   ]);
 
   console.log('products seeded');
+
+  const albums = await Album.insertMany([
+    {
+      title: 'Talk to my ear',
+      description:
+        'Wolf and man talking.',
+      label: 'Victor',
+      Artist: "Chayan",
+      genre: genres[0].id,
+      price: 2.99,
+      quantity: 500,
+      imageFront: '1.png',
+      imageBack: '2.png',
+      sideATracks:["Hello", "Green", "Hello Baby"],
+      sideBTracks:["Hi", "Blue", "What's up"]
+    }
+  ])
+  console.log('Album seeded', albums);
+
+
 
   await User.deleteMany();
 
