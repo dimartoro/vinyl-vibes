@@ -1,6 +1,10 @@
+//Importing dependencies
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
+
 
 function Nav() {
 
@@ -43,8 +47,9 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <span role="img" aria-label="vinyl"><FontAwesomeIcon icon={faRecordVinyl} beat />
+</span>
+          VinylVibes
         </Link>
       </h1>
 
