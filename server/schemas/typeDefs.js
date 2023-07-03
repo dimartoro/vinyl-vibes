@@ -23,21 +23,23 @@ const typeDefs = gql`
   }
 
   type Genre {
-    _id: ID
-    name: String
+    _id: ID!
+    name: String!
   }
 
   type Album {
-    _id: ID
-    title: String
+    _id: ID!
+    title: String!
     description: String
     label: String
-    Artist: String
+    artist: String
     imageFront: String
     imageBack: String
-    quantity: Int
-    price: Float
-    genre: Genre
+    price: Float!
+    quantity: Int!
+    genre: Genre!
+    sideATracks: [String!]!
+    sideBTracks: [String!]!
   }
 
   type User {
@@ -71,6 +73,11 @@ const typeDefs = gql`
     genres: [Genre]
     albums(genre: ID, title: String): [Album]
     album(_id: ID!): Album
+
+    createAlbum(albumInput: AlbumInput!): Album!
+    updateAlbum(id: ID!, albumInput: AlbumInput!): Album!
+    deleteAlbum(id: ID!): Boolean!
+
   }
 
   type Mutation {
@@ -81,6 +88,20 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addAlbumOrder(albums: [ID]!): Order
     updateAlbum(_id: ID!, quantity: Int!): Album
+  }
+
+  input AlbumInput {
+    title: String!
+    description: String
+    label: String
+    artist: String
+    imageFront: String
+    imageBack: String
+    price: Float!
+    quantity: Int!
+    genre: ID!
+    sideATracks: [String!]!
+    sideBTracks: [String!]!
   }
 `;
 
