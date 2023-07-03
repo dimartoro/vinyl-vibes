@@ -38,8 +38,15 @@ const albumSchema = new Schema({
     ref: 'Genre',
     required: true
   },
-  sideATracks: {type:Array, default:[]},
-  sideBTracks: {type: Array, default:[]}
+  sideATracks: {
+    type: [String],
+    default: []
+  },
+  sideBTracks: {
+    type: [String],
+    default: []
+  }
+  
 });
 
 const Album = mongoose.model('Album', albumSchema);
