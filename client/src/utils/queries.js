@@ -16,6 +16,23 @@ export const QUERY_PRODUCTS = gql`
   }
 `;
 
+export const QUERY_ALBUMS = gql`
+  query getAlbums($genre: ID) {
+    albums(genre: $genre) {
+      _id
+      title
+      description
+      price
+      quantity
+      imageFront
+      imageBack
+      genre {
+        _id
+      }
+    }
+  }
+`;
+
 export const QUERY_CHECKOUT = gql`
   query getCheckout($products: [ID]!) {
     checkout(products: $products) {
@@ -42,6 +59,15 @@ export const QUERY_ALL_PRODUCTS = gql`
 export const QUERY_CATEGORIES = gql`
   {
     categories {
+      _id
+      name
+    }
+  }
+`;
+
+export const QUERY_GENRES = gql`
+  {
+    genres {
       _id
       name
     }
