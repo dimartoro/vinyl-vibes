@@ -30,13 +30,11 @@ const typeDefs = gql`
   type Album {
     _id: ID!
     title: String!
-    name: String!
     description: String
     label: String
     artist: String
     imageFront: String
     imageBack: String
-    image: String
     price: Float!
     quantity: Int!
     genre: Genre!

@@ -8,11 +8,6 @@ const albumSchema = new Schema({
     required: true,
     trim: true
   },
-  name: {
-    type: String,
-    required: true,
-    trim: true
-  },
   description: {
     type: String
   },
@@ -26,9 +21,6 @@ const albumSchema = new Schema({
     type: String
   },
   imageBack: {
-    type: String
-  },
-  image: {
     type: String
   },
   price: {

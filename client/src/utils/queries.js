@@ -41,6 +41,7 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
+//Pending to create QUERY_ALL_ALBUMS
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {

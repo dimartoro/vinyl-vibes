@@ -9,10 +9,8 @@ function AlbumItem(item) {
   const [state, dispatch] = useStoreContext();
 
   const {
-    imageFront,
     image,
     name,
-    title,
     _id,
     price,
     quantity

@@ -10,6 +10,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Albums from './pages/Albums';
+import Album from './pages/Album';
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
@@ -73,6 +74,10 @@ function App() {
               <Route 
                 path="/products/:id" 
                 element={<Detail />} 
+              />
+              <Route 
+                path="/albums/:id" 
+                element={<Album />} 
               />
               <Route 
                 path="*" 
