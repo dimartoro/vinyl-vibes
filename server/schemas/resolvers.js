@@ -95,18 +95,18 @@ const resolvers = {
     genres: async () => {
       return await Genre.find();
     },
-    albums: async (parent, { genre, title }) => {
+    albums: async (parent, { genre }) => {
       const params = {};
 
       if (genre) {
         params.genre = genre;
       }
 
-      if (title) {
-        params.tilte = {
-          $regex: title
-        };
-      }
+      // if (title) {
+      //   params.tilte = {
+      //     $regex: title
+      //   };
+      // }
       return await Album.find(params).populate('genre');
     },
     album: async (parent, { _id }) => {
@@ -175,7 +175,6 @@ const resolvers = {
     },
     updateAlbum: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
-
       return await Album.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
   }

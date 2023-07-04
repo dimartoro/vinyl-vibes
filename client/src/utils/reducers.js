@@ -1,12 +1,15 @@
 import { useReducer } from 'react';
 import {
   UPDATE_PRODUCTS,
+  UPDATE_ALBUMS,
   ADD_TO_CART,
   UPDATE_CART_QUANTITY,
   REMOVE_FROM_CART,
   ADD_MULTIPLE_TO_CART,
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
+  UPDATE_GENRES,
+  UPDATE_CURRENT_GENRE,
   CLEAR_CART,
   TOGGLE_CART,
 } from './actions';
@@ -20,6 +23,12 @@ export const reducer = (state, action) => {
         ...state,
         products: [...action.products],
       };
+
+    case UPDATE_ALBUMS:
+    return {
+      ...state,
+      albums: [...action.albums],
+    };
 
     case ADD_TO_CART:
       return {
@@ -79,6 +88,12 @@ export const reducer = (state, action) => {
         ...state,
         categories: [...action.categories],
       };
+    
+    case UPDATE_GENRES:
+      return {
+        ...state,
+        genres: [...action.genres],
+      };
 
     case UPDATE_CURRENT_CATEGORY:
       return {
@@ -86,6 +101,11 @@ export const reducer = (state, action) => {
         currentCategory: action.currentCategory,
       };
 
+    case UPDATE_CURRENT_GENRE:
+    return {
+      ...state,
+      currentGenre: action.currentGenre,
+    };
     // Return the state as is in the event that the `action.type` passed to our reducer was not accounted for by the developers
     // This saves us from a crash.
     default:
