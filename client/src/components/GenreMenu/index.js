@@ -18,11 +18,11 @@ function GenreMenu() {
         genres: genreData.genres,
       });
       genreData.genres.forEach((genre) => {
+        console.log("GENRE::::", genre);
         idbPromise('genres', 'put', genre);
       });
     } else if (!loading) {
       idbPromise('genres', 'get').then((genres) => {
-        console.log("THE GENRESSS::::", genres);
         dispatch({
           type: UPDATE_GENRES,
           genres: genres,

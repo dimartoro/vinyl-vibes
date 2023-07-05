@@ -11,7 +11,7 @@ import {
   UPDATE_GENRES,
   UPDATE_CURRENT_GENRE,
   CLEAR_CART,
-  TOGGLE_CART,
+  TOGGLE_CART
 } from './actions';
 
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.

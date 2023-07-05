@@ -208,3 +208,12 @@ input:focus {
     width: 100%;
   }
 }
+
+.album-detail{
+  width:500px;
+}
+
+.album-images div{
+  display:inline-block;
+  margin-right: 2em;;
+}

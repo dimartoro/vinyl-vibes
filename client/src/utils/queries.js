@@ -26,6 +26,8 @@ export const QUERY_ALBUMS = gql`
       quantity
       imageFront
       imageBack
+      sideATracks
+      sideBTracks
       genre {
         _id
       }
@@ -78,6 +80,8 @@ export const QUERY_GENRES = gql`
 export const QUERY_USER = gql`
   {
     user {
+      _id
+      email
       firstName
       lastName
       orders {

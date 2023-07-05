@@ -15,6 +15,7 @@ import { QUERY_PRODUCTS } from '../utils/queries';
 import { QUERY_ALBUMS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
+import AlbumTracks from "../components/AlbumTracks";
 
 function Album() {
   const [state, dispatch] = useStoreContext();
@@ -111,11 +112,28 @@ function Album() {
               Remove from Cart
             </button>
           </p>
-
-          <img
-            src={`/images/${currentAlbum.imageFront}`}
-            alt={currentAlbum.name}
-          />
+          <div className='album-images'>
+            <div>
+              <img
+              className='album-detail'
+              src={`/images/${currentAlbum.imageFront}`}
+              alt={currentAlbum.name}/>
+            </div>
+            <div>
+            <img
+              className='album-detail'
+              src={`/images/${currentAlbum.imageBack}`}
+              alt={currentAlbum.name}/>
+            </div>
+          </div>
+          <div className='album-images'>
+            <div>
+              <AlbumTracks tracks={currentAlbum.sideATracks}/>
+            </div>
+            <div>
+              <AlbumTracks tracks={currentAlbum.sideBTracks}/>
+            </div>
+          </div>
         </div>
       ) : null}
       {loading ? <img src={spinner} alt="loading" /> : null}

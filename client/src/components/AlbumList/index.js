@@ -19,8 +19,6 @@ function AlbumList() {
 
   useEffect(() => {
     if (data) {
-      console.log("ALBUMS::", data);
-      console.log("STATE:::", state);
       dispatch({
         type: UPDATE_ALBUMS,
         albums: data.albums,
@@ -44,7 +42,7 @@ function AlbumList() {
     if (!currentGenre) {
       return state.albums;
     }
-
+    console.log("ALBUMS:::", state.albums);
     return state.albums.filter(
       (album) => album.genre._id === currentGenre
     );

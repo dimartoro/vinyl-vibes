@@ -121,7 +121,6 @@ const resolvers = {
       return { token, user };
     },
     addOrder: async (parent, { products }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ products });
 
@@ -139,9 +138,16 @@ const resolvers = {
 
       throw new AuthenticationError('Not logged in');
     },
+    //deleteUser(_id:ID): Boolean
+    deleteUser: async (_,{_id}, context) => {
+      if (context.user) {
+        var removed = await User.findByIdAndRemove(context.user._id);
+        return removed?true:false;
+      }
+      throw new AuthenticationError('Not logged in');
+    },
     updateProduct: async (parent, { _id, quantity }) => {
       const decrement = Math.abs(quantity) * -1;
-
       return await Product.findByIdAndUpdate(_id, { $inc: { quantity: decrement } }, { new: true });
     },
     login: async (parent, { email, password }) => {
@@ -162,7 +168,6 @@ const resolvers = {
       return { token, user };
     },
     addAlbumOrder: async (parent, { albums }, context) => {
-      console.log(context);
       if (context.user) {
         const order = new Order({ albums });
 
