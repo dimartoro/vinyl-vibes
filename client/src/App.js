@@ -9,13 +9,13 @@ import {
 import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
-import Albums from './pages/Albums';
-import Album from './pages/Album';
+import Albums from './pages/Albums';//List all albums
+import Album from './pages/Album';//Selected album details
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Profile from './pages/Profile';
+import Profile from './pages/Profile';//Logged in user profile. Used to delete profile.
 import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
@@ -48,8 +48,8 @@ function App() {
           <StoreProvider>
             <Nav />
             <Routes>
-              <Route 
-                path="/" 
+            <Route 
+                path="/" //root
                 element={<Albums />} 
               />
               <Route 

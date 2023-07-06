@@ -55,7 +55,6 @@ function Album() {
 
   const addToCart = () => {
     console.log("CURRENT ALBUM::::", currentAlbum);
-    debugger;
     const tempAlbum = {...currentAlbum};
     console.log("TEMP ALBUM::::", tempAlbum);
     tempAlbum.name = tempAlbum.title;
@@ -94,7 +93,7 @@ function Album() {
   return (
     <>
       {currentAlbum && currentAlbum.sideATracks && currentAlbum.sideBTracks && cart ? (
-        <div className="container my-1">
+        <div className="albums-display container my-1">
           <Link to="/">← Back to Albums</Link>
           <br/>
           <br/>
@@ -127,11 +126,11 @@ function Album() {
           <div className='album-images'>
             <div>
               <h3>Side A Tracks</h3>
-                <AlbumTracks tracks={currentAlbum.sideATracks}/>
+                <AlbumTracks side='A' tracks={currentAlbum.sideATracks} />
               </div>
               <div>
                 <h3>Side B Tracks</h3>
-                <AlbumTracks tracks={currentAlbum.sideBTracks}/>
+                <AlbumTracks side='B' tracks={currentAlbum.sideBTracks} />
               </div>
           </div>
         </div>

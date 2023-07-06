@@ -29,6 +29,7 @@ export const QUERY_ALBUMS = gql`
       imageBack
       sideATracks
       sideBTracks
+      label
       genre {
         _id
       }

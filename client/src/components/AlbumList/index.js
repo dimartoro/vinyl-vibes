@@ -51,8 +51,8 @@ function AlbumList() {
 
   return (
     <>
-      <div className="my-2">
-        <h2>Our Albums:</h2>
+      <div className="albums-display my-2">
+        <h2>Check all available albums</h2>
         {state.albums.length ? (
           <div className="flex-row">
             {filterAlbums().map((album) => (
@@ -62,8 +62,10 @@ function AlbumList() {
                 name={album.title}
                 artist={album.artist}
                 image={album.imageFront}
+                imageBack={album.imageBack}
                 price={album.price}
                 quantity={album.quantity}
+                label={album.label}
               />
             ))}
           </div>
