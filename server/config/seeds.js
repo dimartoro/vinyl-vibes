@@ -214,7 +214,7 @@ db.once('open', async () => {
         price:"19.99",
         quantity:"6",
         imageFront:"pinkTheTruthAboutLoveFront.png",
-        imageBack:"p!nkTheTruthAboutLoveBack.png",
+        imageBack:"pinkTheTruthAboutLoveBack.jpg",
         sideATracks:["Are We All We Are", "Blow Me (One Last Kiss)", "Try", "Just Give Me a Reason", "True Love", "How Come You're Not Here?"],
         sideBTracks:["Slut Like You", "The Truth About Love", "Beam Me Up", "Walk of Chame", "Here Comes The Weekend"]
       },
@@ -227,7 +227,7 @@ db.once('open', async () => {
         price:"13.98",
         quantity:"12",
         imageFront:"ponyBradshawSuddenOperaFront.jpg",
-        imageBack:"ponyBradshawSuddenOperaBack.jpg",
+        imageBack:"ponyBradshawSuddenOperaBack.png",
         sideATracks:["an Gogh","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
         sideBTracks:["Didn't It Rain","Loretta","Bad Teeth","Sippi Sand","Gaslight Heart","Josephine"]
       },
@@ -240,7 +240,7 @@ db.once('open', async () => {
         price:"29.99",
         quantity:"50",
         imageFront:"queenTheGameFront.png",
-        imageBack:"queenTheGameBack.png",
+        imageBack:"queenTheGameBack.jpeg",
         sideATracks:["Play the Game","Dragon Attack","Another One Bites the Dust","Need Your Loving Tonight","Crazy Little Thing Called Love","Rock It (Prime Jive)","Save Me"],
         sideBTracks:["Save Me (Live in Montreal, November 1981)","Don't Try Suicide","Sail Away Sweet Sister","Coming Soon","A Human Body (B-Side)","Sail Away Sweet Sister (Take 1 with Guide Vocal)","It's a Beautiful Day (Original Spontaneous Idea, April 1980)","Dragon Attack (Live at Milton Keynes Bowl, June 1982)"]
       },
