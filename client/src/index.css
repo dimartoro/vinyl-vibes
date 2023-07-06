@@ -208,3 +208,19 @@ input:focus {
     width: 100%;
   }
 }
+
+.album-detail{
+  height: 300px;
+}
+
+.album-images div{
+  display:inline-block;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+.artist{
+  font-weight: bold;
+  color:#B12704;
+  font-size: large;
+}

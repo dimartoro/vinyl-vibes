@@ -21,11 +21,14 @@ export const QUERY_ALBUMS = gql`
     albums(genre: $genre) {
       _id
       title
+      artist
       description
       price
       quantity
       imageFront
       imageBack
+      sideATracks
+      sideBTracks
       genre {
         _id
       }
@@ -41,6 +44,7 @@ export const QUERY_CHECKOUT = gql`
   }
 `;
 
+//Pending to create QUERY_ALL_ALBUMS
 export const QUERY_ALL_PRODUCTS = gql`
   {
     products {
@@ -77,6 +81,8 @@ export const QUERY_GENRES = gql`
 export const QUERY_USER = gql`
   {
     user {
+      _id
+      email
       firstName
       lastName
       orders {

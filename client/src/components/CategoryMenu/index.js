@@ -17,11 +17,13 @@ function CategoryMenu() {
 
   useEffect(() => {
     if (categoryData) {
+      console.log("GENREDATA:::", categoryData);
       dispatch({
         type: UPDATE_CATEGORIES,
         categories: categoryData.categories,
       });
       categoryData.categories.forEach((category) => {
+        console.log("CATEGORY::::", category);
         idbPromise('categories', 'put', category);
       });
     } else if (!loading) {

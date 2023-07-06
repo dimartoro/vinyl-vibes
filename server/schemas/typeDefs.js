@@ -23,20 +23,18 @@ const typeDefs = gql`
   }
 
   type Genre {
-    _id: ID!
-    name: String!
+    _id: ID
+    name: String
   }
 
   type Album {
     _id: ID!
     title: String!
-    name: String!
     description: String
     label: String
     artist: String
     imageFront: String
     imageBack: String
-    image: String
     price: Float!
     quantity: Int!
     genre: Genre!
@@ -81,6 +79,7 @@ const typeDefs = gql`
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
+    deleteUser(_id: ID): Boolean
     updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
     addAlbumOrder(albums: [ID]!): Order

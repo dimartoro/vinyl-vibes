@@ -29,6 +29,12 @@ export const ADD_ORDER = gql`
   }
 `;
 
+export const DELETE_USER = gql`
+  mutation deleteUser($id:ID) {
+    deleteUser(_id:$id)
+  }
+`;
+
 export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
