@@ -26,8 +26,8 @@ To access this project, visit the repository link: https://github.com/dimartoro/
 
 
 ## Images
-
-
+Here is the screenshot of home page  
+Here is the screenshot of example of detailed album cover page
 
 ## Contributors
 * [https://github.com/dimartoro] (Diana Castro)
