@@ -8,14 +8,12 @@ import {
   REMOVE_FROM_CART,
   UPDATE_CART_QUANTITY,
   ADD_TO_CART,
-  UPDATE_PRODUCTS,
   UPDATE_ALBUMS
 } from '../utils/actions';
-import { QUERY_PRODUCTS } from '../utils/queries';
 import { QUERY_ALBUMS } from '../utils/queries';
 import { idbPromise } from '../utils/helpers';
 import spinner from '../assets/spinner.gif';
-import AlbumTracks from "../components/AlbumTracks";
+import AlbumTracks from '../components/AlbumTracks';
 
 function Album() {
   const [state, dispatch] = useStoreContext();
@@ -31,6 +29,7 @@ function Album() {
     // already in global store
     if (albums.length) {
       setCurrentAlbum(albums.find((album) => album._id === id));
+      console.log("CURRENT ALBUM:::", currentAlbum);
     }
     // retrieved from server
     else if (data) {
@@ -38,9 +37,9 @@ function Album() {
         type: UPDATE_ALBUMS,
         albums: data.albums,
       });
-
+      console.log("ALBUMS::::", data.albums);
       data.albums.forEach((album) => {
-        idbPromise('album', 'put', album);
+        idbPromise('albums', 'put', album);
       });
     }
     // get cache from idb
@@ -94,14 +93,13 @@ function Album() {
 
   return (
     <>
-      {currentAlbum && cart ? (
+      {currentAlbum && currentAlbum.sideATracks && currentAlbum.sideBTracks && cart ? (
         <div className="container my-1">
           <Link to="/">← Back to Albums</Link>
-
-          <h2>{currentAlbum.title}</h2>
-
+          <br/>
+          <br/>
+          <h2>{currentAlbum.artist} - {currentAlbum.title}</h2>
           <p>{currentAlbum.description}</p>
-
           <p>
             <strong>Price:</strong>${currentAlbum.price}{' '}
             <button onClick={addToCart}>Add to Cart</button>
@@ -113,13 +111,13 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-            <div>
+            <div className='card'>
               <img
               className='album-detail'
               src={`/images/${currentAlbum.imageFront}`}
               alt={currentAlbum.name}/>
             </div>
-            <div>
+            <div className='card'>
             <img
               className='album-detail'
               src={`/images/${currentAlbum.imageBack}`}
@@ -128,11 +126,13 @@ function Album() {
           </div>
           <div className='album-images'>
             <div>
-              <AlbumTracks tracks={currentAlbum.sideATracks}/>
-            </div>
-            <div>
-              <AlbumTracks tracks={currentAlbum.sideBTracks}/>
-            </div>
+              <h3>Side A Tracks</h3>
+                <AlbumTracks tracks={currentAlbum.sideATracks}/>
+              </div>
+              <div>
+                <h3>Side B Tracks</h3>
+                <AlbumTracks tracks={currentAlbum.sideBTracks}/>
+              </div>
           </div>
         </div>
       ) : null}

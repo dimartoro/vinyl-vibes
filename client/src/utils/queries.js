@@ -21,6 +21,7 @@ export const QUERY_ALBUMS = gql`
     albums(genre: $genre) {
       _id
       title
+      artist
       description
       price
       quantity

@@ -157,7 +157,7 @@ db.once('open', async () => {
       title: 'ADELE21',
       description: 'The album was named after the age of the singer during its production. 21 shares the Motown/soul influences of her 2008 debut album 19, but also draws influence from the American country and Southern blues music that Adele started listening to during the North American leg of her tour An Evening with Adele.',
       label: 'XL-Columbia',
-      artist: "AC/DC",
+      artist: "ADELE",
       genre: genres[1].id,
       price: 75.00,
       quantity: 2,

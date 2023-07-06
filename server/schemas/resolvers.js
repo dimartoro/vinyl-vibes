@@ -110,7 +110,9 @@ const resolvers = {
       return await Album.find(params).populate('genre');
     },
     album: async (parent, { _id }) => {
-      return await Album.findById(_id).populate('genre');
+      const album = await Album.findById(_id).populate('genre');
+      console.log("THE ALBUM::::", album);
+      return album;
     },
   },
   Mutation: {

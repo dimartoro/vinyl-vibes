@@ -210,10 +210,17 @@ input:focus {
 }
 
 .album-detail{
-  width:500px;
+  height: 300px;
 }
 
 .album-images div{
   display:inline-block;
-  margin-right: 2em;;
+  margin-right: 2em;
+  vertical-align: top;
+}
+
+.artist{
+  font-weight: bold;
+  color:#B12704;
+  font-size: large;
 }

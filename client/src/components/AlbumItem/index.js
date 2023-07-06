@@ -13,13 +13,13 @@ function AlbumItem(item) {
     name,
     _id,
     price,
-    quantity
+    quantity,
+    artist
   } = item;
 
   const { cart } = state
 
   const addToCart = () => {
-    console.log("THECARRRRT:::::", cart);
     const itemInCart = cart.find((cartItem) => cartItem._id === _id)
     if (itemInCart) {
       dispatch({
@@ -42,6 +42,7 @@ function AlbumItem(item) {
 
   return (
     <div className="card px-1 py-1">
+      <div className="artist">{artist}</div>
       <Link to={`/albums/${_id}`}>
         <img
           alt={name}
@@ -49,6 +50,7 @@ function AlbumItem(item) {
         />
         <p>{name}</p>
       </Link>
+      
       <div>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>

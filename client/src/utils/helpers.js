@@ -8,80 +8,80 @@ export function pluralize(name, count) {
 export function idbPromise(storeName, method, object) {
   console.log(`StoreName: ${storeName}, Method: ${method}, Object: ${object}`);
   return new Promise((resolve, reject) => {
-    console.log("1");
+    // console.log("1");
     const request = window.indexedDB.open('shop-shop', 1);
-    console.log("2");
+    // console.log("2");
     let db, tx, store;
-    console.log("3");
+    // console.log("3");
     request.onupgradeneeded = function(e) {
-      console.log("4");
+      // console.log("4");
       const db = request.result;
-      console.log("5");
+      // console.log("5");
       db.createObjectStore('products', { keyPath: '_id' });
-      console.log("6");
+      // console.log("6");
       db.createObjectStore('albums', { keyPath: '_id' });
-      console.log("7");
+      // console.log("7");
       db.createObjectStore('categories', { keyPath: '_id' });
-      console.log("8");
+      // console.log("8");
       db.createObjectStore('genres', { keyPath: '_id' });
-      console.log("9");
+      // console.log("9");
       db.createObjectStore('cart', { keyPath: '_id' });
-      console.log("10");
+      // console.log("10");
     };
 
     request.onerror = function(e) {
-      console.log("11");
+      // console.log("11");
       console.log('There was an error');
     };
 
     request.onsuccess = function(e) {
-      console.log("12");
+      // console.log("12");
       db = request.result;
-      console.log("13");
+      // console.log("13");
       tx = db.transaction(storeName, 'readwrite');
-      console.log("14");
+      // console.log("14");
       store = tx.objectStore(storeName);
-      console.log("15");
+      // console.log("15");
 
       db.onerror = function(e) {
-        console.log("16");
+        // console.log("16");
         console.log('error', e);
       };
 
       switch (method) {
         case 'put':
-          console.log("17");
+          // console.log("17");
           store.put(object);
-          console.log("18");
+          // console.log("18");
           resolve(object);
-          console.log("19");
+          // console.log("19");
           break;
         case 'get':
-          console.log("20");
+          // console.log("20");
           const all = store.getAll();
-          console.log("21");
+          // console.log("21");
           all.onsuccess = function() {
-            console.log("23");
+            // console.log("23");
             resolve(all.result);
-            console.log("24");
+            // console.log("24");
           };
           break;
         case 'delete':
-          console.log("25");
+          // console.log("25");
           store.delete(object._id);
-          console.log("26");
+          // console.log("26");
           break;
         default:
-          console.log("27");
+          // console.log("27");
           console.log('No valid method');
-          console.log("28");
+          // console.log("28");
           break;
       }
 
       tx.oncomplete = function() {
-        console.log("29");
+        // console.log("29");
         db.close();
-        console.log("30");
+        // console.log("30");
       };
     };
   });
