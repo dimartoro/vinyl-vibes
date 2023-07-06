@@ -127,11 +127,11 @@ function Album() {
           <div className='album-images'>
             <div>
               <h3>Side A Tracks</h3>
-                <AlbumTracks tracks={currentAlbum.sideATracks}/>
+                <AlbumTracks side='A' tracks={currentAlbum.sideATracks}/>
               </div>
               <div>
                 <h3>Side B Tracks</h3>
-                <AlbumTracks tracks={currentAlbum.sideBTracks}/>
+                <AlbumTracks side='B' tracks={currentAlbum.sideBTracks}/>
               </div>
           </div>
         </div>
