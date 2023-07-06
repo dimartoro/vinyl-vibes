@@ -18,5 +18,4 @@ function AlbumTracks(props) {
     </>
   );
 }
-
 export default AlbumTracks;
