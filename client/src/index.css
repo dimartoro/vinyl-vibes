@@ -224,3 +224,25 @@ input:focus {
   color:#B12704;
   font-size: large;
 }
+
+.clear-filter{
+  font-weight: bold;
+  background-color: rgb(204, 90, 90);
+  font-size: large;
+  margin-left: 3em;
+}
+
+.add-filter{
+  background-color:#a0df7b;
+}
+
+.genre-menu{
+  background-color: rgb(252, 244, 235);
+  padding: 1em;
+  margin-top: 1em;;
+}
+
+.albums-display{
+  background-color: rgb(252, 244, 235);
+  padding: 1em;;
+}

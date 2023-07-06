@@ -33,7 +33,6 @@ function GenreMenu() {
   
   
   const handleClick = (id) => {
-    console.log("CurrentID::::", id);
     dispatch({
       type: UPDATE_CURRENT_GENRE,
       currentGenre: id,
@@ -42,10 +41,10 @@ function GenreMenu() {
 
   return (
     <>
-      <div>
-        <h2>Choose a Genre:</h2>
+      <div className='genre-menu'>
+        <h2>Filter by Genre</h2>
         {genres.map((item) => (
-          <button
+          <button className='add-filter'
             key={item._id}
             onClick={() => {
               handleClick(item._id);
@@ -54,6 +53,13 @@ function GenreMenu() {
             {item.name}
           </button>
         ))}
+        <button className='clear-filter'
+            onClick={() => {
+              handleClick('');
+            }}
+          >
+            Clear filters
+        </button>
       </div>
     </>
   );

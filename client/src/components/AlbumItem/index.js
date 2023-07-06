@@ -14,7 +14,8 @@ function AlbumItem(item) {
     _id,
     price,
     quantity,
-    artist
+    artist,
+    label
   } = item;
 
   const { cart } = state
@@ -50,7 +51,6 @@ function AlbumItem(item) {
         />
         <p>{name}</p>
       </Link>
-      
       <div>
         <div>{quantity} {pluralize("item", quantity)} in stock</div>
         <span>${price}</span>
