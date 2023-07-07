@@ -111,16 +111,19 @@ function Album() {
           </p>
           <div className='album-images'>
             <div className='card'>
+              <div class='grow'>
               <img
               className='album-detail'
               src={`/images/${currentAlbum.imageFront}`}
               alt={currentAlbum.name}/>
             </div>
+            
             <div className='card'>
             <img
               className='album-detail'
               src={`/images/${currentAlbum.imageBack}`}
               alt={currentAlbum.name}/>
+              </div>
             </div>
           </div>
           <div className='album-images'>
