@@ -9,7 +9,7 @@ export function idbPromise(storeName, method, object) {
   console.log(`StoreName: ${storeName}, Method: ${method}, Object: ${object}`);
   return new Promise((resolve, reject) => {
     // console.log("1");
-    const request = window.indexedDB.open('shop-shop', 1);
+    const request = window.indexedDB.open('VinylVibes', 1);
     // console.log("2");
     let db, tx, store;
     // console.log("3");
