@@ -36,12 +36,12 @@ function Nav() {
         <ul className="flex-row">
           <li className="mx-1">
             <Link to="/signup">
-              Signup
+              <h5>Signup</h5>
             </Link>
           </li>
           <li className="mx-1">
             <Link to="/login">
-              Login
+              <h5>Login</h5>
             </Link>
           </li>
         </ul>
