@@ -226,8 +226,8 @@ db.once('open', async () => {
         genre:genres[0].id,
         price:"13.98",
         quantity:"12",
-        imageFront:"ponyBradshawSuddenOperaFront.jpg",
-        imageBack:"ponyBradshawSuddenOperaBack.png",
+        imageFront:"ponyBradShawSuddenOperaFront.jpg",
+        imageBack:"ponyBradShawSuddenOperaBack.png",
         sideATracks:["an Gogh","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
         sideBTracks:["Didn't It Rain","Loretta","Bad Teeth","Sippi Sand","Gaslight Heart","Josephine"]
       },
