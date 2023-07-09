@@ -75,7 +75,7 @@ function App() {
               />
               <Route 
                 path="/orderHistory" 
-                element={<OrderHistory />} 
+                element={<Profile />} 
               />
               <Route 
                 path="/test" 
