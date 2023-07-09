@@ -15,12 +15,12 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';//Logged in user profile. Used to delete profile.
-import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Album from './pages/Album';//Selected album details
 import Test from './pages/Test'
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -75,6 +75,10 @@ function App() {
               />
               <Route 
                 path="/orderHistory" 
+                element={<Profile />} 
+              />
+              <Route 
+                path="/userProfile" 
                 element={<Profile />} 
               />
               <Route 
