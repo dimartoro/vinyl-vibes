@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import ProductItem from '../ProductItem';
 import AlbumItem from '../AlbumItem';
 import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_PRODUCTS, UPDATE_ALBUMS } from '../../utils/actions';
+import { UPDATE_ALBUMS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS, QUERY_ALBUMS } from '../../utils/queries';
+import { QUERY_ALBUMS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
