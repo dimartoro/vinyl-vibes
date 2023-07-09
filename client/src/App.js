@@ -20,6 +20,7 @@ import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 import Album from './pages/Album';//Selected album details
+import Test from './pages/Test'
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -75,6 +76,10 @@ function App() {
               <Route 
                 path="/orderHistory" 
                 element={<OrderHistory />} 
+              />
+              <Route 
+                path="/test" 
+                element={<Test/>} 
               />
               <Route 
                 path="/products/:id" 
