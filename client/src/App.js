@@ -10,7 +10,6 @@ import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Albums from './pages/Albums';//List all albums
-import Album from './pages/Album';//Selected album details
 import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
@@ -20,6 +19,7 @@ import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+import Album from './pages/Album';//Selected album details
 
 const httpLink = createHttpLink({
   uri: '/graphql',
