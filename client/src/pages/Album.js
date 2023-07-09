@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -18,13 +17,9 @@ import AlbumTracks from '../components/AlbumTracks';
 function Album() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
-
   const [currentAlbum, setCurrentAlbum] = useState({});
-
   const { loading, data } = useQuery(QUERY_ALBUMS);
-
   const { albums, cart } = state;
-  
   useEffect(() => {
     // already in global store
     if (albums.length) {
@@ -110,7 +105,6 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-            {/* <div className='card'> */}
               <div class='grow'>
               <img
               className='album-detail'
@@ -123,7 +117,6 @@ function Album() {
               className='album-detail'
               src={`/images/${currentAlbum.imageBack}`}
               alt={currentAlbum.name}/>
-              {/* </div> */}
             </div>
           </div>
           <div className='album-images'>

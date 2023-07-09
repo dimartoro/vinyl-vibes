@@ -148,7 +148,7 @@ db.once('open', async () => {
       genre: genres[0].id,
       price: 70.00,
       quantity: 4,
-      imageFront: 'acdcHighWayToHellFront.jpg',
+      imageFront: 'acdcHighwayToHellFront.jpg',
       imageBack: 'acdcHighWayToHellBack.jpg',
       sideATracks:["Highway to Hell", "Girls Got Rhythm", "Walk All Over You","Touch Too Much","Beating Around the Bush"],
       sideBTracks:["Shot Down in Flames", "Get It Hot", "If You Want Blood (You've Got It)","Love Hungry Man","Night Prowler"]
@@ -226,7 +226,7 @@ db.once('open', async () => {
         genre:genres[0].id,
         price:"13.98",
         quantity:"12",
-        imageFront:"ponyBradShawSuddenOperaFront.jpg",
+        imageFront:"ponyBradshawSuddenOperaFront.jpg",
         imageBack:"ponyBradShawSuddenOperaBack.png",
         sideATracks:["an Gogh","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
         sideBTracks:["Didn't It Rain","Loretta","Bad Teeth","Sippi Sand","Gaslight Heart","Josephine"]
@@ -266,7 +266,7 @@ db.once('open', async () => {
         genre:genres[4].id,
         price:"59.99",
         quantity:"7",
-        imageFront:"milesDavisKindOfBlueFront.jpg",
+        imageFront:"milesDavisKindofBlueFront.jpg",
         imageBack:"milesDavisKindOfBlueBack.jpg",
         image:"milesDavisKindOfBlueFront.jpg",
         sideATracks:["All Blues","Flamenco Sketches","Freddie Freeloader"],
