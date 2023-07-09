@@ -12,13 +12,13 @@ function GenreMenu() {
 
   useEffect(() => {
     if (genreData) {
-      console.log("GENREDATA:::", genreData);
+      // console.log("GENREDATA:::", genreData);
       dispatch({
         type: UPDATE_GENRES,
         genres: genreData.genres,
       });
       genreData.genres.forEach((genre) => {
-        console.log("GENRE::::", genre);
+        // console.log("GENRE::::", genre);
         idbPromise('genres', 'put', genre);
       });
     } else if (!loading) {

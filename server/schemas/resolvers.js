@@ -111,7 +111,7 @@ const resolvers = {
     },
     album: async (parent, { _id }) => {
       const album = await Album.findById(_id).populate('genre');
-      console.log("THE ALBUM::::", album);
+      // console.log("THE ALBUM::::", album);
       return album;
     },
   },
