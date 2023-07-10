@@ -102,7 +102,7 @@ db.once('open', async () => {
         quantity:"12",
         imageFront:"ponyBradshawSuddenOperaFront.jpg",
         imageBack:"ponyBradShawSuddenOperaBack.png",
-        sideATracks:["an Gogh","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
+        sideATracks:["Van Gough","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
         sideBTracks:["Didn't It Rain","Loretta","Bad Teeth","Sippi Sand","Gaslight Heart","Josephine"]
       },
       {
