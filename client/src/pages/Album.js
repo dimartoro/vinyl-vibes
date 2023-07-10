@@ -93,7 +93,7 @@ function Album() {
   return (
     <>
       {currentAlbum && currentAlbum.sideATracks && currentAlbum.sideBTracks && cart ? (
-        <div className="albums-display container my-1">
+        <div className="albums-single-display container my-1">
           <Link to="/">← Back to Albums</Link>
           <br/>
           <br/>
@@ -110,7 +110,7 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-            <div className='card'>
+            {/* <div className='card'> */}
               <div class='grow'>
               <img
               className='album-detail'
@@ -118,12 +118,12 @@ function Album() {
               alt={currentAlbum.name}/>
             </div>
             
-            <div className='card'>
+            <div className='grow'>
             <img
               className='album-detail'
               src={`/images/${currentAlbum.imageBack}`}
               alt={currentAlbum.name}/>
-              </div>
+              {/* </div> */}
             </div>
           </div>
           <div className='album-images'>
