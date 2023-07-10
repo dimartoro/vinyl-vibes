@@ -45,10 +45,12 @@ function AlbumItem(item) {
     <div className="card px-1 py-1">
       <div className="artist">{artist}</div>
       <Link to={`/albums/${_id}`}>
+        <div class ="rotate">
         <img
           alt={name}
           src={`/images/${image}`}
         />
+        </div>
         <p>{name}</p>
       </Link>
       <div>
