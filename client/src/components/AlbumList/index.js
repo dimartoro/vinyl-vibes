@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
-import ProductItem from '../ProductItem';
 import AlbumItem from '../AlbumItem';
 import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_PRODUCTS, UPDATE_ALBUMS } from '../../utils/actions';
+import { UPDATE_ALBUMS } from '../../utils/actions';
 import { useQuery } from '@apollo/client';
-import { QUERY_PRODUCTS, QUERY_ALBUMS } from '../../utils/queries';
+import { QUERY_ALBUMS } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import spinner from '../../assets/spinner.gif';
 
@@ -12,10 +11,10 @@ function AlbumList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentGenre } = state;
-  console.log("CURRENTE GENRE", currentGenre);
+  // console.log("CURRENTE GENRE", currentGenre);
   const { loading, data } = useQuery(QUERY_ALBUMS);
 
-  console.log("LOADING::::", loading);
+  // console.log("LOADING::::", loading);
 
   useEffect(() => {
     if (data) {
@@ -27,7 +26,7 @@ function AlbumList() {
         idbPromise('albums', 'put', album);
       });
     } else if (!loading) {
-      console.log("LOADING AGAIN::::", loading);
+      // console.log("LOADING AGAIN::::", loading);
       idbPromise('albums', 'get').then((albums) => {
         dispatch({
           type: UPDATE_ALBUMS,
@@ -40,7 +39,7 @@ function AlbumList() {
 
   function filterAlbums() {
     if (!currentGenre) {
-      console.log("ALBUMS:::", state.albums);
+      // console.log("ALBUMS:::", state.albums);
       return state.albums;
     }
     

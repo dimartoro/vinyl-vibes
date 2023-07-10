@@ -6,7 +6,7 @@ export function pluralize(name, count) {
 }
 
 export function idbPromise(storeName, method, object) {
-  console.log(`StoreName: ${storeName}, Method: ${method}, Object: ${object}`);
+  // console.log(`StoreName: ${storeName}, Method: ${method}, Object: ${object}`);
   return new Promise((resolve, reject) => {
     // console.log("1");
     const request = window.indexedDB.open('VinylVibes', 1);
