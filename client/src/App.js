@@ -8,18 +8,15 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
-import Home from './pages/Home';
 import Albums from './pages/Albums';//List all albums
-import Album from './pages/Album';//Selected album details
-import Detail from './pages/Detail';
 import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Profile from './pages/Profile';//Logged in user profile. Used to delete profile.
-import Nav from './components/Nav';
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
-import OrderHistory from './pages/OrderHistory';
+import Album from './pages/Album';//Selected album details
+import Nav from './components/Nav';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -53,10 +50,6 @@ function App() {
                 element={<Albums />} 
               />
               <Route 
-                path="/products" 
-                element={<Home />} 
-              />
-              <Route 
                 path="/login" 
                 element={<Login />} 
               />
@@ -74,11 +67,11 @@ function App() {
               />
               <Route 
                 path="/orderHistory" 
-                element={<OrderHistory />} 
+                element={<Profile />} 
               />
               <Route 
-                path="/products/:id" 
-                element={<Detail />} 
+                path="/userProfile" 
+                element={<Profile />} 
               />
               <Route 
                 path="/albums/:id" 

@@ -5,7 +5,7 @@ import { DELETE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { QUERY_USER } from '../utils/queries';
 
-function OrderHistory() {
+function Profile() {
   const { data } = useQuery(QUERY_USER);
   let user;
 
@@ -73,4 +73,4 @@ function OrderHistory() {
     </>
   );
 }
-export default OrderHistory;
+export default Profile;

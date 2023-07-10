@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-
 import Cart from '../components/Cart';
 import { useStoreContext } from '../utils/GlobalState';
 import {
@@ -18,18 +17,14 @@ import AlbumTracks from '../components/AlbumTracks';
 function Album() {
   const [state, dispatch] = useStoreContext();
   const { id } = useParams();
-
   const [currentAlbum, setCurrentAlbum] = useState({});
-
   const { loading, data } = useQuery(QUERY_ALBUMS);
-
   const { albums, cart } = state;
-  
   useEffect(() => {
     // already in global store
     if (albums.length) {
       setCurrentAlbum(albums.find((album) => album._id === id));
-      console.log("CURRENT ALBUM:::", currentAlbum);
+      // console.log("CURRENT ALBUM:::", currentAlbum);
     }
     // retrieved from server
     else if (data) {
@@ -37,7 +32,7 @@ function Album() {
         type: UPDATE_ALBUMS,
         albums: data.albums,
       });
-      console.log("ALBUMS::::", data.albums);
+      // console.log("ALBUMS::::", data.albums);
       data.albums.forEach((album) => {
         idbPromise('albums', 'put', album);
       });
@@ -54,13 +49,13 @@ function Album() {
   }, [albums, data, loading, dispatch, id]);
 
   const addToCart = () => {
-    console.log("CURRENT ALBUM::::", currentAlbum);
+    // console.log("CURRENT ALBUM::::", currentAlbum);
     const tempAlbum = {...currentAlbum};
-    console.log("TEMP ALBUM::::", tempAlbum);
+    // console.log("TEMP ALBUM::::", tempAlbum);
     tempAlbum.name = tempAlbum.title;
-    console.log("TEMP ALBUM::::", tempAlbum);
+    // console.log("TEMP ALBUM::::", tempAlbum);
     tempAlbum.image = tempAlbum.imageFront;
-    console.log("TEMP ALBUM::::", tempAlbum);
+    // console.log("TEMP ALBUM::::", tempAlbum);
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
     if (itemInCart) {
       dispatch({
@@ -110,7 +105,6 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-            {/* <div className='card'> */}
               <div class='grow'>
               <img
               className='album-detail'
@@ -123,7 +117,6 @@ function Album() {
               className='album-detail'
               src={`/images/${currentAlbum.imageBack}`}
               alt={currentAlbum.name}/>
-              {/* </div> */}
             </div>
           </div>
           <div className='album-images'>
