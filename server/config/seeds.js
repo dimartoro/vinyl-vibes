@@ -97,12 +97,12 @@ db.once('open', async () => {
         description:"Pony Bradshaw didn’t know he could sing because he’d never tried. His dad was a military man turned Elvis impersonator whom a young Pony helped keep stocked with scarves on stage for admirers. Pony had always listened to music, but he’d never made it. He played baseball. He joined––and got kicked out of––the Air Force. It was about five years ago when Pony discovered not only that he could make music, but that he should.",
         label:"Rounder",
         artist:"Pony Bradshaw",
-        genre:genres[0].id,
+        genre:genres[1].id,
         price:"13.98",
         quantity:"12",
         imageFront:"ponyBradshawSuddenOperaFront.jpg",
         imageBack:"ponyBradShawSuddenOperaBack.png",
-        sideATracks:["an Gogh","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
+        sideATracks:["Van Gough","Jehovah","Shame","Ain't No Eden","10x10","Charlatan"],
         sideBTracks:["Didn't It Rain","Loretta","Bad Teeth","Sippi Sand","Gaslight Heart","Josephine"]
       },
       {
@@ -123,7 +123,7 @@ db.once('open', async () => {
         description:"Hear Me Out, the long awaited, highly anticipated debut album from Reignwolf, will be unleashed to the world Friday, March 1st. The band best known for it's raw sound and high energy performances have put the finishing touches on this ten track studio monster. With appearances at major music festivals such as Coachella, Lollapalooza, Austin City Limits and Glastonbury and high profile opening slots for some of the most influential bands including Black Sabbath and Pixies, Reignwolf made a name for themselves worldwide without ever releasing a record... until now!",
         label:"Reignwolf",
         artist:"Reign Wolf",
-        genre:genres[1].id,
+        genre:genres[0].id,
         price:"19.99",
         quantity:"5",
         imageFront:"reignwolfHearMeOutFront.jpg",

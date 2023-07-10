@@ -123,6 +123,17 @@ img {
   transition: 1s ease;
   }
 
+  .rotate img{
+    transition: 1s ease;
+    }
+    
+    .rotate img:hover{
+    -webkit-transform: rotateZ(-10deg);
+    -ms-transform: rotateZ(-10deg);
+    transform: rotateZ(-10deg);
+    transition: 1s ease;
+    }
+
 span[role="img"] {
   cursor: default;
 }
