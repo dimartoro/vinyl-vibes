@@ -28,7 +28,7 @@ To access this project, visit the repository link: https://github.com/dimartoro/
 ## Images
 ![Image is the screenshot of homepage of VinylVibes](./client/public/images/homepage.png)
 ![Image is the screenshot of album cover](./client/public/images/albumdetail.png)
-Here is the screenshot of example of detailed album cover page
+
 
 ## Contributors
 * [https://github.com/dimartoro] (Diana Castro)
