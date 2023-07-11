@@ -5,7 +5,7 @@ function Jumbotron({ children }) {
     <div
       style={{ height: 560, clear: "both", paddingTop: 120, textAlign: "center" }}
     >
-      {children}
+      {children} {/* Render the children components or elements */}
     </div>
   );
 }

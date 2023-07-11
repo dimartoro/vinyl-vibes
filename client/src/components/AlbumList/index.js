@@ -18,15 +18,18 @@ function AlbumList() {
 
   useEffect(() => {
     if (data) {
+      // If data is available, update the albums in the global state
       dispatch({
         type: UPDATE_ALBUMS,
         albums: data.albums,
       });
+      //store each album in indexedDB
       data.albums.forEach((album) => {
         idbPromise('albums', 'put', album);
       });
     } else if (!loading) {
-      // console.log("LOADING AGAIN::::", loading);
+      
+  //If the data is not available and loading is false, retrieve album from IndexeDB
       idbPromise('albums', 'get').then((albums) => {
         dispatch({
           type: UPDATE_ALBUMS,
@@ -40,9 +43,10 @@ function AlbumList() {
   function filterAlbums() {
     if (!currentGenre) {
       // console.log("ALBUMS:::", state.albums);
+      //If no genre has been selected, return all albums
       return state.albums;
     }
-    
+    //Filter albums based on the current genre
     return state.albums.filter(
       (album) => album.genre._id === currentGenre
     );

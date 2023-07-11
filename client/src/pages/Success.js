@@ -9,23 +9,26 @@ function Success() {
 
   useEffect(() => {
     async function saveOrder() {
+      // Retrieve cart items from IndexedDB
       const cart = await idbPromise('cart', 'get');
       const products = cart.map((item) => item._id);
 
       if (products.length) {
+        // Add order using the addOrder mutation
         const { data } = await addOrder({ variables: { products } });
         const productData = data.addOrder.products;
 
+        // Remove ordered items from cart in IndexedDB
         productData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
       }
-
+      // Redirect to the home page after a delay
       setTimeout(() => {
         window.location.assign('/');
       }, 3000);
     }
-
+    // Call saveOrder function when the component mounts
     saveOrder();
   }, [addOrder]);
 

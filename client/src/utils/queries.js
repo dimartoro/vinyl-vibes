@@ -1,5 +1,6 @@
 import { gql } from '@apollo/client';
 
+
 export const QUERY_PRODUCTS = gql`
   query getProducts($category: ID) {
     products(category: $category) {
@@ -15,7 +16,7 @@ export const QUERY_PRODUCTS = gql`
     }
   }
 `;
-
+// Query for retrieving albums. Can filter by genre ID. Returns album details including ID, title, artist, description, price, quantity, images, tracks, label, and genre ID.
 export const QUERY_ALBUMS = gql`
   query getAlbums($genre: ID) {
     albums(genre: $genre) {
@@ -69,7 +70,7 @@ export const QUERY_CATEGORIES = gql`
     }
   }
 `;
-
+// Query for retrieving genres. Returns genre details including ID and name.
 export const QUERY_GENRES = gql`
   {
     genres {
@@ -79,6 +80,7 @@ export const QUERY_GENRES = gql`
   }
 `;
 
+// Query for retrieving user information. Returns user details including ID, email, first name, last name, and order history with product details.
 export const QUERY_USER = gql`
   {
     user {
