@@ -5,9 +5,13 @@ import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
 
 function Signup(props) {
+  // Set up form state
   const [formState, setFormState] = useState({ email: '', password: '' });
+  
+  // Define the addUser mutation
   const [addUser] = useMutation(ADD_USER);
 
+// Handle form submission
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     const mutationResponse = await addUser({
@@ -21,7 +25,7 @@ function Signup(props) {
     const token = mutationResponse.data.addUser.token;
     Auth.login(token);
   };
-
+  // Handle form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormState({

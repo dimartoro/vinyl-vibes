@@ -6,9 +6,9 @@ import Cart from "../components/Cart";
 const Albums = () => {
   return (
     <div className="container">
-      <GenreMenu />
-      <AlbumList/>
-      <Cart />
+      <GenreMenu /> {/* Render the genre menu component */}
+      <AlbumList /> {/* Render the album list component */}
+      <Cart /> {/* Render the cart component */}
     </div>
   );
 };

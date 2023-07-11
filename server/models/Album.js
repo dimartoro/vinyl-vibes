@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
+// Create a new albumSchema using the Schema constructor
 const albumSchema = new Schema({
   title: {
     type: String,

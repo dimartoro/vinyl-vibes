@@ -11,12 +11,15 @@ function Login(props) {
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
+      // Call the login mutation with the form state values
       const mutationResponse = await login({
         variables: { email: formState.email, password: formState.password },
       });
       const token = mutationResponse.data.login.token;
+      // Log in the user by storing the token in local storage
       Auth.login(token);
     } catch (e) {
+      // Handle error if login fails
       // console.log(e);
     }
   };
