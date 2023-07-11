@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { useStoreContext } from '../../utils/GlobalState';
-import { UPDATE_CATEGORIES, UPDATE_CURRENT_CATEGORY, UPDATE_GENRES, UPDATE_CURRENT_GENRE } from '../../utils/actions';
-import { QUERY_CATEGORIES, QUERY_GENRES } from '../../utils/queries';
+import {  UPDATE_GENRES, UPDATE_CURRENT_GENRE } from '../../utils/actions';
+import { QUERY_GENRES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
 function GenreMenu() {
