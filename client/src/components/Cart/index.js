@@ -55,13 +55,13 @@ const Cart = () => {
     const productIds = [];
 
     state.cart.forEach((item) => {
-      // Generate an array of product IDs based on the purchase quantity
+      // Generate an array of album IDs based on the purchase quantity
       for (let i = 0; i < item.purchaseQuantity; i++) {
         productIds.push(item._id);
       }
     });
 
-    // Trigger the checkout process by calling the GraphQL query with the product IDs
+    // Trigger the checkout process by calling the GraphQL query with the album IDs
     getCheckout({
       variables: { products: productIds },
     });

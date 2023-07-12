@@ -9,11 +9,8 @@ const { Provider } = StoreContext;
 const StoreProvider = ({ value = [], ...props }) => {
    // Use the useProductReducer hook to initialize the state and dispatch
   const [state, dispatch] = useProductReducer({
-    products: [],
     cart: [],
     cartOpen: false,
-    categories: [],
-    currentCategory: '',
     albums:[],
     genres:[],
     currentGenre:''
