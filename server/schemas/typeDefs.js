@@ -51,7 +51,7 @@ const typeDefs = gql`
   type Query {
     user: User
     order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    checkout(albums: [ID]!): Checkout
     genres: [Genre]
     albums(genre: ID): [Album]
     album(_id: ID!): Album

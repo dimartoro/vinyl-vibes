@@ -33,21 +33,21 @@ const resolvers = {
     },
     checkout: async (parent, args, context) => {
       const url = new URL(context.headers.referer).origin;
-      const order = new Order({ products: args.albums });
+      const order = new Order({ albums: args.albums });
       const line_items = [];
 
-      const { products } = await order.populate('products');
+      const { albums } = await order.populate('albums');
 
-      for (let i = 0; i < products.length; i++) {
-        const product = await stripe.products.create({
-          name: products[i].name,
-          description: products[i].description,
-          images: [`${url}/images/${products[i].image}`]
+      for (let i = 0; i < albums.length; i++) {
+        const album = await stripe.albums.create({
+          title: albums[i].name,
+          description: albums[i].description,
+          imageFront: [`${url}/images/${albums[i].image}`]
         });
 
         const price = await stripe.prices.create({
-          product: product.id,
-          unit_amount: products[i].price * 100,
+          album: album.id,
+          unit_amount: albums[i].price * 100,
           currency: 'usd',
         });
 
