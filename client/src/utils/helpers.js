@@ -17,8 +17,6 @@ export function idbPromise(storeName, method, object) {
       // console.log("4");
       const db = request.result;
       // console.log("5");
-      db.createObjectStore('products', { keyPath: '_id' });
-      // console.log("6");
       db.createObjectStore('albums', { keyPath: '_id' });
       // console.log("7");
       db.createObjectStore('genres', { keyPath: '_id' });
