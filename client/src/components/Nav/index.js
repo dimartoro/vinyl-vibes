@@ -13,6 +13,7 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
+            {/* <Link to="/orderHistory"> */}
             <Link to="/profile">
               Profile
             </Link>
@@ -23,6 +24,12 @@ function Nav() {
               Logout
             </a>
           </li>
+          {/* <li className="mx-1"> */}
+            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+            {/* <a href="/userProfile"> */}
+              {/* Profile */}
+            {/* </a> */}
+          {/* </li> */}
         </ul>
       );
     } else {
