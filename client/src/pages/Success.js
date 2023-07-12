@@ -11,15 +11,15 @@ function Success() {
     async function saveOrder() {
       // Retrieve cart items from IndexedDB
       const cart = await idbPromise('cart', 'get');
-      const albums = cart.map((item) => item._id);
+      const products = cart.map((item) => item._id);
 
-      if (albums.length) {
+      if (products.length) {
         // Add order using the addOrder mutation
-        const { data } = await addOrder({ variables: { albums } });
-        const albumData = data.addOrder.albums;
+        const { data } = await addOrder({ variables: { products } });
+        const productData = data.addOrder.products;
 
         // Remove ordered items from cart in IndexedDB
-        albumData.forEach((item) => {
+        productData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
       }

@@ -52,7 +52,7 @@ function AlbumItem(item) {
     <div className="card px-1 py-1">
       <div className="artist">{artist}</div>
       <Link to={`/albums/${_id}`}>
-        <div className ="rotate">
+        <div class ="rotate">
         <img
           alt={name}
           src={`/images/${image}`}
