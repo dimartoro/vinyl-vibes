@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
 import {useQuery, useMutation } from '@apollo/client';
-import { Link } from 'react-router-dom';
 import { DELETE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { QUERY_USER } from '../utils/queries';
+
 
 function Profile() {
   // Fetch the user data from the server
