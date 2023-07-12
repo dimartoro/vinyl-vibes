@@ -25,7 +25,6 @@ const resolvers = {
           path: 'orders.albums',
           populate: 'genre'
         });
-
         return user.orders.id(_id);
       }
 
