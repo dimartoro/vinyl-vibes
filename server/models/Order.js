@@ -8,12 +8,6 @@ const orderSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  products: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Product'
-    }
-  ],
   albums: [
     {
       type: Schema.Types.ObjectId,

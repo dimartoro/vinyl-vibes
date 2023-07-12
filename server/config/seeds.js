@@ -1,5 +1,5 @@
 const db = require('./connection');
-const { User, Product, Category, Album, Genre } = require('../models');
+const { User, Album, Genre } = require('../models');
 
 db.once('open', async () => {
   await Genre.deleteMany();
