@@ -56,16 +56,12 @@ const Cart = () => {
 
     state.cart.forEach((item) => {
       // Generate an array of album IDs based on the purchase quantity
-    console.log('Checkout button clicked********');
-    state.cart.forEach((item) => {
-
       for (let i = 0; i < item.purchaseQuantity; i++) {
         albumIds.push(item._id);
       }
     });
 
     // Trigger the checkout process by calling the GraphQL query with the album IDs
-
     getCheckout({
       variables: { albums: albumIds },
     });
