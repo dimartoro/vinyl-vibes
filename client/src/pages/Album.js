@@ -105,7 +105,7 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-              <div className='grow'>
+              <div class='grow'>
               <img
               className='album-detail'
               src={`/images/${currentAlbum.imageFront}`}
