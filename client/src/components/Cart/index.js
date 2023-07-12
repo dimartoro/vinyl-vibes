@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Elements } from '@stripe/react-stripe-js';
+import React, { useEffect } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -9,48 +8,44 @@ import Auth from '../../utils/auth';
 import { useStoreContext } from '../../utils/GlobalState';
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from '../../utils/actions';
 import './style.css';
-import CheckoutForm from '../CheckoutForm';
 
-const stripePromise = loadStripe('pk_test_51NSTN1Cmyd0XbLfoHOSNd2tG494zrzdYDJpa0diQr2dOEr2jhcZHr7eRO9D0JM5WTBwMIazfvDsuA3zu7X9tGi3E00IJVL7GTo');
+const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
 const Cart = () => {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
-  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
 
   useEffect(() => {
     if (data) {
-      const redirectToCheckout = async () => {
-        const stripe = await stripePromise;
-        const { error } = await stripe.redirectToCheckout({
-          sessionId: data.checkout.session,
-        });
-        if (error) {
-          console.error(error);
-        }
-      };
-      redirectToCheckout();
+      // Redirect to Stripe checkout when data is available
+      stripePromise.then((res) => {
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
     }
   }, [data]);
 
   useEffect(() => {
     async function getCart() {
+      // Retrieve cart items from IndexedDB
       const cart = await idbPromise('cart', 'get');
       dispatch({ type: ADD_MULTIPLE_TO_CART, albums: [...cart] });
     }
 
     if (!state.cart.length) {
+      // If cart is empty in the global state, get cart items from IndexedDB
       getCart();
     }
   }, [state.cart.length, dispatch]);
 
   function toggleCart() {
+    // Toggle cart open/close state in the global state
     dispatch({ type: TOGGLE_CART });
   }
 
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
+      // Calculate the total price of all items in the cart
       sum += item.price * item.purchaseQuantity;
     });
     return sum.toFixed(2);
@@ -63,22 +58,21 @@ const Cart = () => {
       // Generate an array of album IDs based on the purchase quantity
     console.log('Checkout button clicked********');
     state.cart.forEach((item) => {
+
       for (let i = 0; i < item.purchaseQuantity; i++) {
         albumIds.push(item._id);
       }
     });
 
     // Trigger the checkout process by calling the GraphQL query with the album IDs
+
     getCheckout({
       variables: { albums: albumIds },
     });
   }
 
-  function handleCheckout() {
-    setShowCheckoutForm(true);
-  }
-
   if (!state.cartOpen) {
+    // Render a closed cart if the cartOpen state is false
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <span role="img" aria-label="trash">
@@ -97,22 +91,16 @@ const Cart = () => {
       {state.cart.length ? (
         <div>
           {state.cart.map((item) => (
+            // Render CartItem component for each item in the cart
             <CartItem key={item._id} item={item} />
           ))}
 
-          <div>
+          <div className="flex-row space-between">
             <strong>Total: ${calculateTotal()}</strong>
 
             {Auth.loggedIn() ? (
-              <>
-                {showCheckoutForm ? (
-                  <Elements stripe={stripePromise}>
-                    <CheckoutForm />
-                  </Elements>
-                ) : (
-                  <button onClick={handleCheckout}>Checkout</button>
-                )}
-              </>
+              // Render checkout button if the user is logged in
+              <button onClick={submitCheckout}>Checkout</button>
             ) : (
               <span>(log in to check out)</span>
             )}
