@@ -28,7 +28,7 @@ const Cart = () => {
     async function getCart() {
       // Retrieve cart items from IndexedDB
       const cart = await idbPromise('cart', 'get');
-      dispatch({ type: ADD_MULTIPLE_TO_CART, products: [...cart] });
+      dispatch({ type: ADD_MULTIPLE_TO_CART, albums: [...cart] });
     }
 
     if (!state.cart.length) {
@@ -52,18 +52,18 @@ const Cart = () => {
   }
 
   function submitCheckout() {
-    const productIds = [];
+    const albumIds = [];
 
     state.cart.forEach((item) => {
-      // Generate an array of product IDs based on the purchase quantity
+      // Generate an array of album IDs based on the purchase quantity
       for (let i = 0; i < item.purchaseQuantity; i++) {
-        productIds.push(item._id);
+        albumIds.push(item._id);
       }
     });
 
-    // Trigger the checkout process by calling the GraphQL query with the product IDs
+    // Trigger the checkout process by calling the GraphQL query with the album IDs
     getCheckout({
-      variables: { products: productIds },
+      variables: { albums: albumIds },
     });
   }
 
