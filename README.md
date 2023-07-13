@@ -23,11 +23,11 @@ This e-commerce website enables customers to buy vinyl albums, covering genres l
 To access this project, visit the repository link: https://github.com/dimartoro/vinyl-vibes
 
 ## Heroku Deployment: 
-
+https://vinyl-vibes-lp-cda464cf0a39.herokuapp.com/
 
 ## Images
-Here is the screenshot of home page  
-Here is the screenshot of example of detailed album cover page
+![Image is the screenshot of homepage of VinylVibes](./client/public/images/homepage.png)
+![Image is the screenshot of album cover](./client/public/images/albumdetail.png)
 
 ## Contributors
 * [https://github.com/dimartoro] (Diana Castro)
@@ -36,3 +36,5 @@ Here is the screenshot of example of detailed album cover page
 * [https://github.com/KritiShrestha] (Kriti Shrestha)
 
 ## Acknowledgements
+*MERN Exercise 
+*Mini projects
