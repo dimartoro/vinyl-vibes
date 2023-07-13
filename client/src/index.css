@@ -157,9 +157,9 @@ input:focus {
 }
 
 .container {
-  width: 85%;
+  width: 100%;
   max-width: 1200px;
-  margin-left: auto;
+  margin-left: var (--spacing-one);
   margin-right: auto;
 }
 
@@ -179,6 +179,8 @@ input:focus {
 .mx-1 {
   margin-right: var(--spacing-one);
   margin-left: var(--spacing-one);
+  padding-left: var(--spacing-one);
+  
 }
 
 .mx-2 {
@@ -189,7 +191,14 @@ input:focus {
 .my-1 {
   margin-top: var(--spacing-one);
   margin-bottom: var(--spacing-one);
+  justify-content: center;
+  color: #309af7;
 }
+
+.my-1 h2{
+  color: #0f3353;
+}
+
 
 .my-2 {
   margin-top: var(--spacing-two);
