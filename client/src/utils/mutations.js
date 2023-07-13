@@ -13,18 +13,11 @@ export const LOGIN = gql`
 `;
 // Mutation for adding an order. Requires an array of album IDs. Returns purchase date and detailed album information.
 export const ADD_ORDER = gql`
-  mutation addAlbumOrder($albums: [ID]!) {
-    addAlbumOrder(albums: $albums) {
+  mutation addOrder($albums: [ID]!) {
+    addOrder(albums: $albums) {
       purchaseDate
       albums {
         _id
-        title
-        description
-        price
-        quantity
-        genre {
-          name
-        }
       }
     }
   }

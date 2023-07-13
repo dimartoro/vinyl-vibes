@@ -11,10 +11,7 @@ function AlbumList() {
   const [state, dispatch] = useStoreContext();
 
   const { currentGenre } = state;
-  // console.log("CURRENTE GENRE", currentGenre);
   const { loading, data } = useQuery(QUERY_ALBUMS);
-
-  // console.log("LOADING::::", loading);
 
   useEffect(() => {
     if (data) {
@@ -42,7 +39,6 @@ function AlbumList() {
 
   function filterAlbums() {
     if (!currentGenre) {
-      // console.log("ALBUMS:::", state.albums);
       //If no genre has been selected, return all albums
       return state.albums;
     }

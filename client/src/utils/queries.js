@@ -48,6 +48,18 @@ export const QUERY_USER = gql`
       email
       firstName
       lastName
+      orders{
+        _id
+        purchaseDate
+        albums {
+          _id
+          title
+          description
+          price
+          quantity
+          imageFront
+        }
+      }
     }
   }
 `;

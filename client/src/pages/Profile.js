@@ -2,6 +2,7 @@ import {useQuery, useMutation } from '@apollo/client';
 import { DELETE_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { QUERY_USER } from '../utils/queries';
+import { Link, useParams } from 'react-router-dom';
 
 
 function Profile() {
@@ -52,7 +53,31 @@ function Profile() {
             <div>Last Name: {user.lastName}</div>
             <div>Email: {user.email}</div>
             <br/>
+            <br/>
             <div> I want to <button onClick={deleteHandler} id={`${user._id}`}> Delete </button> my account</div>
+            <br/>
+            <h2>Saved Orders</h2>
+            {user.orders.map((order) => (
+              <div key={order._id} className="my-2">
+                <h3>
+                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
+                </h3>
+                <div className="flex-row">
+                  
+                  {order.albums.map(({ _id, imageFront, title, price }, index) => (
+                    <div key={index} className="card px-1 py-1">
+                      <Link to={`/albums/${_id}`}>
+                        <img alt={title} src={`/images/${imageFront}`} />
+                        <p>{title}</p>
+                      </Link>
+                      <div>
+                        <span>${price}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </>
         ) : null}
       </div>
