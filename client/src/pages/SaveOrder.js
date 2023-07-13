@@ -4,7 +4,7 @@ import Jumbotron from '../components/Jumbotron';
 import { ADD_ORDER } from '../utils/mutations';
 import { idbPromise } from '../utils/helpers';
 
-function Success() {
+function SaveOrder() {
   const [addOrder] = useMutation(ADD_ORDER);
 
   useEffect(() => {
@@ -12,12 +12,12 @@ function Success() {
       // Retrieve cart items from IndexedDB
       const cart = await idbPromise('cart', 'get');
       const albums = cart.map((item) => item._id);
-
       if (albums.length) {
         // Add order using the addOrder mutation
         const { data } = await addOrder({ variables: { albums } });
         const albumData = data.addOrder.albums;
 
+        // Remove ordered items from cart in IndexedDB
         albumData.forEach((item) => {
           idbPromise('cart', 'delete', item);
         });
@@ -34,12 +34,10 @@ function Success() {
   return (
     <div>
       <Jumbotron>
-        <h1>Success!</h1>
-        <h2>Thank you for your purchase!</h2>
-        <h2>You will now be redirected to the home page</h2>
+        <h1>Your Order was saved Successfully!</h1>
       </Jumbotron>
     </div>
   );
 }
 
-export default Success;
+export default SaveOrder;

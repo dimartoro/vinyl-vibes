@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
-
 function AlbumTracks(props) {
-  // console.log("PROPS from ALBUM TRACKS:::", props);
+  //Extracting the "side props" from props object
   const side = props.side;
 
   return (

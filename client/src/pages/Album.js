@@ -24,7 +24,6 @@ function Album() {
     // already in global store
     if (albums.length) {
       setCurrentAlbum(albums.find((album) => album._id === id));
-      // console.log("CURRENT ALBUM:::", currentAlbum);
     }
     // retrieved from server
     else if (data) {
@@ -32,7 +31,6 @@ function Album() {
         type: UPDATE_ALBUMS,
         albums: data.albums,
       });
-      // console.log("ALBUMS::::", data.albums);
       data.albums.forEach((album) => {
         idbPromise('albums', 'put', album);
       });
@@ -49,13 +47,9 @@ function Album() {
   }, [albums, data, loading, dispatch, id]);
 
   const addToCart = () => {
-    // console.log("CURRENT ALBUM::::", currentAlbum);
     const tempAlbum = {...currentAlbum};
-    // console.log("TEMP ALBUM::::", tempAlbum);
     tempAlbum.name = tempAlbum.title;
-    // console.log("TEMP ALBUM::::", tempAlbum);
     tempAlbum.image = tempAlbum.imageFront;
-    // console.log("TEMP ALBUM::::", tempAlbum);
     const itemInCart = cart.find((cartItem) => cartItem._id === id);
     if (itemInCart) {
       dispatch({
@@ -105,7 +99,7 @@ function Album() {
             </button>
           </p>
           <div className='album-images'>
-              <div class='grow'>
+              <div className='grow'>
               <img
               className='album-detail'
               src={`/images/${currentAlbum.imageFront}`}

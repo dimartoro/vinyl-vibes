@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { pluralize } from "../../utils/helpers"
+import { pluralize } from "../../utils/helpers";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
@@ -14,29 +14,36 @@ function AlbumItem(item) {
     _id,
     price,
     quantity,
-    artist,
-    label
+    artist
   } = item;
 
-  const { cart } = state
+  const { cart } = state;
 
   const addToCart = () => {
-    const itemInCart = cart.find((cartItem) => cartItem._id === _id)
+    // Check if the item is already in the cart
+    const itemInCart = cart.find((cartItem) => cartItem._id === _id);
+    
     if (itemInCart) {
+      // If the item is already in the cart, update its quantity
       dispatch({
         type: UPDATE_CART_QUANTITY,
         _id: _id,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
+
+      // Update the item quantity in IndexedDB
       idbPromise('cart', 'put', {
         ...itemInCart,
         purchaseQuantity: parseInt(itemInCart.purchaseQuantity) + 1
       });
     } else {
+      // If the item is not in the cart, add it to the cart
       dispatch({
         type: ADD_TO_CART,
         album: { ...item, purchaseQuantity: 1 }
       });
+
+      // Add the item to IndexedDB with a quantity of 1
       idbPromise('cart', 'put', { ...item, purchaseQuantity: 1 });
     }
   }
@@ -45,7 +52,7 @@ function AlbumItem(item) {
     <div className="card px-1 py-1">
       <div className="artist">{artist}</div>
       <Link to={`/albums/${_id}`}>
-        <div class ="rotate">
+        <div className ="rotate">
         <img
           alt={name}
           src={`/images/${image}`}

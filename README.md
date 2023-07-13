@@ -1,7 +1,7 @@
 # vinyl-vibes
 
 ## Description
-This single-page e-commerce website is specifically designed for customers interested in purchasing vinyl albums. It offers a various selection of genres, including Rock, Pop, Rap, Country, Jazz, and Hip-hop. The website is developed using the MERN stack, leveraging React and Express as the frontend framework, and MongoDB and Node.js for the backend. Users have the ability to effortlessly browse and select albums from various genres, gaining access to comprehensive details about each album and its respective artist upon clicking. This includes a concise album description, pricing information, and the option to add the album to their cart. Furthermore, users are provided with the opportunity to explore the album's song list as well as view the front and back covers before making a final purchasing decision. In order to proceed with a purchase, users can either sign up for a new account or log in to an existing one, ensuring a seamless user experience. Additionally, the website offers users the flexibility to delete their account as needed.
+This single-page e-commerce website is specifically designed for customers interested in purchasing vinyl albums. It offers a various selection of genres, including Rock, Pop, Rap, Country, Jazz, and Hip-hop. The website is developed using the MERN stack, leveraging React and Express as the frontend framework, and MongoDB and Node.js for the backend. Users have the ability to effortlessly browse and select albums from various genres, gaining access to comprehensive details about each album and its respective artist upon clicking. This includes a concise album description, pricing information, view the stock of album and the option to add the album to their cart.Furthermore, users are provided with the opportunity to explore the album's song list as well as view the front and back covers before making a final purchasing decision.Users can either sign up for a new account or log in to an existing one, ensuring a seamless user experience such as an option of saving an album to purchase later or purchase at the same given time.  Additionally, the website offers users the flexibility to delete their account as needed.
 
 ## Built With
 * CSS
@@ -23,11 +23,14 @@ This e-commerce website enables customers to buy vinyl albums, covering genres l
 To access this project, visit the repository link: https://github.com/dimartoro/vinyl-vibes
 
 ## Heroku Deployment: 
-
+https://vinyl-vibes-lp-cda464cf0a39.herokuapp.com/
 
 ## Images
-Here is the screenshot of home page  
-Here is the screenshot of example of detailed album cover page
+Homepage of Vinyl Vibes
+![Image is the screenshot of homepage of VinylVibes](./client/public/images/homepage.png)
+
+Detailed view of ALbum cover
+![Image is the screenshot of album cover](./client/public/images/albumdetail.png)
 
 ## Contributors
 * [https://github.com/dimartoro] (Diana Castro)
@@ -36,3 +39,5 @@ Here is the screenshot of example of detailed album cover page
 * [https://github.com/KritiShrestha] (Kriti Shrestha)
 
 ## Acknowledgements
+*MERN Exercise 
+*Mini projects
