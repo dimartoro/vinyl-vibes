@@ -88,7 +88,7 @@ function Album() {
   return (
     <>
       {currentAlbum && currentAlbum.sideATracks && currentAlbum.sideBTracks && cart ? (
-        <div className="albums-single-display container my-1">
+        <div className="albums-single-display container ">
           <Link to="/">← Back to Albums</Link>
           <br/>
           <br/>
