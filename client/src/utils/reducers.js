@@ -13,8 +13,6 @@ import {
 
 // The reducer is a function that accepts the current state and an action. It returns a new state based on that action.
 export const reducer = (state, action) => {
-  // console.log("STATE:::",state);
-  // console.log("ACTION:::", action);
   switch (action.type) {
     // Returns a copy of state with an update albums array. We use the action.albums property and spread it's contents into the new array.
     case UPDATE_ALBUMS:

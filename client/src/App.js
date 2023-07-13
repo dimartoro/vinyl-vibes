@@ -15,6 +15,7 @@ import Signup from './pages/Signup';
 import Profile from './pages/Profile';//Logged in user profile. Used to delete profile.
 import { StoreProvider } from './utils/GlobalState';
 import Success from './pages/Success';
+import SaveOrder from './pages/SaveOrder';
 import Album from './pages/Album';//Selected album details
 import Nav from './components/Nav';
 
@@ -64,6 +65,10 @@ function App() {
               <Route 
                 path="/success" 
                 element={<Success />} 
+              />
+              <Route 
+                path="/saveorder" 
+                element={<SaveOrder />} 
               />
               <Route 
                 path="/orderHistory" 

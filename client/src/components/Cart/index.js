@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
 import { useLazyQuery } from '@apollo/client';
 import { QUERY_CHECKOUT } from '../../utils/queries';
@@ -96,7 +97,10 @@ const Cart = () => {
 
             {Auth.loggedIn() ? (
               // Render checkout button if the user is logged in
-              <button onClick={submitCheckout}>Checkout</button>
+              <>
+              <Link to="/saveorder">Save for later</Link>              
+              <button disabled="disabled" onClick={submitCheckout}>Checkout</button>
+              </>
             ) : (
               <span>(log in to check out)</span>
             )}

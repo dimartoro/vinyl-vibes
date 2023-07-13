@@ -20,7 +20,6 @@ function Login(props) {
       Auth.login(token);
     } catch (e) {
       // Handle error if login fails
-      // console.log(e);
     }
   };
 

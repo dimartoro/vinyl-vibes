@@ -122,11 +122,15 @@ const resolvers = {
     },
     addOrder: async (parent, { albums }, context) => {
       if (context.user) {
-        const order = new Order({ albums });
-
-        await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
-
+        try{
+        // const order = new Order({ albums });
+        const order = await Order.create({ albums });
+        const user = await User.findByIdAndUpdate(context.user._id, { $push: { orders: order } });
         return order;
+        }catch(err){
+          console.log("THERE IS AN ERROR", err);
+        }
+        return {};
       }
 
       throw new AuthenticationError('Not logged in');
