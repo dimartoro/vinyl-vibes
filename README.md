@@ -26,7 +26,7 @@ To access this project, visit the repository link: https://github.com/dimartoro/
 https://vinyl-vibes-lp-cda464cf0a39.herokuapp.com/
 
 ## Images
-![Image is the screenshot of homepage of VinylVibes]gi(./client/public/images/homepage.png)
+![Image is the screenshot of homepage of VinylVibes](./client/public/images/homepage.png)
 ![Image is the screenshot of album cover](./client/public/images/albumdetail.png)
 
 ## Contributors
