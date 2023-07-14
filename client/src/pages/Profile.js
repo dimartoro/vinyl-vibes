@@ -21,7 +21,7 @@ function Profile() {
   // Handle the delete button click event
   const deleteHandler = async (e) => {
     e.preventDefault();
-    if(window.confirm("Are you sure you want to delete your account?") == true){
+    if (window.confirm("Are you sure you want to delete your account?")) {
       var id = data.user._id;
           // Perform the delete user mutation
       const mutationResponse = await deleteUser({
@@ -42,13 +42,12 @@ function Profile() {
   };
 
   return (
-    <>
-      <div className="container my-1">
+    <div className="profile-container">
+      <div className="background-image"></div>
+      <div className="content-container">
         {user ? (
           <>
-            <h2>
-              User Profile
-            </h2>
+            <h1>User Profile</h1>
             <div>First Name: {user.firstName}</div>
             <div>Last Name: {user.lastName}</div>
             <div>Email: {user.email}</div>
@@ -81,7 +80,9 @@ function Profile() {
           </>
         ) : null}
       </div>
-    </>
+    </div>
   );
 }
+
 export default Profile;
+
