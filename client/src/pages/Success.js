@@ -25,7 +25,7 @@ function Success() {
       // Redirect to the home page after a delay
       setTimeout(() => {
         window.location.assign('/');
-      }, 3000);
+      }, 1000);
     }
     // Call saveOrder function when the component mounts
     saveOrder();
