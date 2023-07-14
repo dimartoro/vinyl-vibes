@@ -42,9 +42,8 @@ function Profile() {
   };
 
   return (
-    <div className="profile-container">
-      <div className="background-image"></div>
-      <div className="content-container">
+    <>
+      <div className="container my-1">
         {user ? (
           <>
             <h1>User Profile</h1>
@@ -80,7 +79,7 @@ function Profile() {
           </>
         ) : null}
       </div>
-    </div>
+      </>
   );
 }
 
