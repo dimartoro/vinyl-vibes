@@ -1,4 +1,4 @@
-# vinyl-vibes
+# Vinyl-Vibes
 
 ## Description
 This single-page e-commerce website is specifically designed for customers interested in purchasing vinyl albums. It offers a various selection of genres, including Rock, Pop, Rap, Country, Jazz, and Hip-hop. The website is developed using the MERN stack, leveraging React and Express as the frontend framework, and MongoDB and Node.js for the backend. Users have the ability to effortlessly browse and select albums from various genres, gaining access to comprehensive details about each album and its respective artist upon clicking. This includes a concise album description, pricing information, view the stock of album and the option to add the album to their cart.Furthermore, users are provided with the opportunity to explore the album's song list as well as view the front and back covers before making a final purchasing decision.Users can either sign up for a new account or log in to an existing one, ensuring a seamless user experience such as an option of saving an album to purchase later or purchase at the same given time.  Additionally, the website offers users the flexibility to delete their account as needed.
@@ -39,5 +39,5 @@ Detailed view of ALbum cover
 * [https://github.com/KritiShrestha] (Kriti Shrestha)
 
 ## Acknowledgements
-*MERN Exercise 
-*Mini projects
+*MERN Exercise   
+*Mini projects  
